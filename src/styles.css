@@ -26,13 +26,6 @@ body {
     align-items: center;
 }
 
-.mainContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-}
-
 .container {
     width: 400px;
     height: 80vh;

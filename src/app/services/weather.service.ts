@@ -13,15 +13,8 @@ export class WeatherService {
   constructor(private http: HttpClient) {} 
 
   getWeatherData(cityName: string): Observable<WeatherData> {
-
-    /*
-    const headers = new HttpHeaders({
-      'X-RapidAPI-Key': environment.XRapidAPIKeyHeaderValue,
-      'X-RapidAPI-Host': environment.XRapidAPIHostHeaderValue
-    });
-    */
-    //return this.http.get<WeatherData>(`${environment.weatherApiBaseUrl}/city/${cityName}`, { headers });
-    return this.http.get<WeatherData>(`${environment.weatherApiBaseUrl}`);
+    const url = `${environment.weatherApiBaseUrl}?q=${cityName}&appid=${environment.apiKey}&units=metric`;
+    return this.http.get<WeatherData>(url);
   }
   
 }
